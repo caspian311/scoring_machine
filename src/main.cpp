@@ -27,9 +27,12 @@ void signal_setup_complete()
       delay(250);
    }
 
-   digitalWrite(BUZZER, HIGH);
-   delay(250);
-   digitalWrite(BUZZER, LOW);
+   if (!MUTE) 
+   {
+      digitalWrite(BUZZER, HIGH);
+      delay(250);
+      digitalWrite(BUZZER, LOW);
+   }
 }
 
 void setup_debugging()

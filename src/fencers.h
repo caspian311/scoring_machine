@@ -38,6 +38,8 @@ class Fencers
 
       bool is_2b_high();
       bool is_1c_low();
+
+      void print_debugging_info();
 };
 
 #endif

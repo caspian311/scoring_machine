@@ -3,6 +3,22 @@
 #include "configurations.h"
 #include "lines.h"
 
+void Fencers::print_debugging_info()
+{
+    Serial.println("Fencer 1:");
+    Serial.println(reading1_a);
+    Serial.println(reading1_b);
+    Serial.println(reading1_c);
+    Serial.println("============");
+
+    Serial.println("Fencer 2:");
+    Serial.println(reading2_a);
+    Serial.println(reading2_b);
+    Serial.println(reading2_c);
+    Serial.println("============");
+    delay(1000);
+}
+
 void Fencers::receive_inputs()
 {
    reading1_a = analogRead(FENCER1_A); 
@@ -12,6 +28,10 @@ void Fencers::receive_inputs()
    reading2_a = analogRead(FENCER2_A); 
    reading2_b = analogRead(FENCER2_B); 
    reading2_c = analogRead(FENCER2_C); 
+
+   if (DEBUG) {
+      print_debugging_info();
+   }
 }
 
 void Fencers::update_fencer1_state()

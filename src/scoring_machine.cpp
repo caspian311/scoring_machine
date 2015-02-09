@@ -36,21 +36,6 @@ void ScoringMachine::update_lights()
 
 void ScoringMachine::cycle() 
 {
-   /*
-    Serial.println("Fencer 1:");
-    Serial.println(analogRead(fencer1_a));
-    Serial.println(analogRead(fencer1_b));
-    Serial.println(analogRead(fencer1_c));
-    Serial.println("============");
-
-    Serial.println("Fencer 2:");
-    Serial.println(analogRead(fencer2_a));
-    Serial.println(analogRead(fencer2_b));
-    Serial.println(analogRead(fencer2_c));
-    Serial.println("============");
-    delay(1000);
-    */
-
    fencers.receive_inputs();
 
    fencers.update_fencer1_state();
@@ -62,7 +47,10 @@ void ScoringMachine::cycle()
       {
          fencers.reset();
       }
+   }
 
+   if (fencers.did_fencer1_score() || fencers.did_fencer2_score()) 
+   {
       update_buzzer();
    }
 

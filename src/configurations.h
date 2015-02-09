@@ -2,7 +2,7 @@
 #define _CONF_H
 
 // Set to true to use the serial debugger
-const bool DEBUG = true;
+const bool DEBUG = false;
 
 // Length light should show (in milliseconds)
 const float LIGHT_LENGTH = 3000;
@@ -10,7 +10,7 @@ const float LIGHT_LENGTH = 3000;
 const float BUZZER_LENGTH = 1000;
 
 // Mute the buzzer
-const bool MUTE = false;
+const bool MUTE = true;
 
 // When current is split 3 ways (weapon A + weapon B + ground)
 const int THRESHOLD_LOW = 125;
