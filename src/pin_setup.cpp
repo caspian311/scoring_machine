@@ -1,26 +1,39 @@
 #include "Arduino.h"
 #include "lines.h"
 
-void setup_pins() {
-   // initialize buttons
-   pinMode(fencer1_a, INPUT);
-   digitalWrite(fencer1_a, HIGH);
+void initialize_lights()
+{
+   pinMode(FENCER1_LIGHT, OUTPUT);
+   pinMode(FENCER2_LIGHT, OUTPUT);
 
-   pinMode(fencer2_a, INPUT);
-   digitalWrite(fencer2_a, HIGH);
+   pinMode(ONBOARD_LED, OUTPUT);
+}
 
-   pinMode(fencer1_b, INPUT);
-   pinMode(fencer2_b, INPUT);
+void initialize_weapon_inputs()
+{
+   pinMode(FENCER1_A, INPUT);
+   digitalWrite(FENCER1_A, HIGH);
 
-   pinMode(fencer2_c, INPUT);
-   pinMode(fencer1_c, INPUT);
+   pinMode(FENCER2_A, INPUT);
+   digitalWrite(FENCER2_A, HIGH);
 
-   // initialize the lights:
-   pinMode(fencer1_light, OUTPUT);
-   pinMode(fencer2_light, OUTPUT);
+   pinMode(FENCER1_B, INPUT);
+   pinMode(FENCER2_B, INPUT);
 
-   pinMode(onboard_led, OUTPUT);
+   pinMode(FENCER2_C, INPUT);
+   pinMode(FENCER1_C, INPUT);
+}
 
-   // initialize the buzzer
-   pinMode(buzzer, OUTPUT);
+void initialize_buzzer()
+{
+   pinMode(BUZZER, OUTPUT);
+}
+
+void setup_pins() 
+{
+   initialize_weapon_inputs();
+
+   initialize_lights();
+
+   initialize_buzzer();
 }

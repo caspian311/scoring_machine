@@ -1,19 +1,26 @@
+#ifndef _CONF_H
+#define _CONF_H
+
+// Set to true to use the serial debugger
+const bool DEBUG = true;
 
 // Length light should show (in milliseconds)
-const float light_length = 4000;
+const float LIGHT_LENGTH = 3000;
 // Length buzzer should sound (in milliseconds) ** Must be less than light_length
-const float buzzer_length = 1000;
+const float BUZZER_LENGTH = 1000;
 
 // Mute the buzzer
-bool mute = false;
+const bool MUTE = false;
 
 // When current is split 3 ways (weapon A + weapon B + ground)
-const int threshold_low = 125;
+const int THRESHOLD_LOW = 125;
 // When current is split 2 ways (weapon A + weapon B)
-const int threshold_medium = 270;
+const int THRESHOLD_MEDIUM = 270;
 // When current is not split (weapon A)
-const int threshold_high = 400;
+const int THRESHOLD_HIGH = 400;
 
 // Epee Timing
 // Stop registering touches after x milliseconds
-const int epee_timeout_duration = 40;
+const int EPEE_TIMEOUT_DURATION = 40;
+
+#endif

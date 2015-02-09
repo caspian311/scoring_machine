@@ -1,14 +1,20 @@
+#ifndef _LINES_H
+#define _LINES_H
 
-const int fencer1_a = A0;           // A Line for Fencer 1
-const int fencer1_b = A1;           // B Line for Fencer 1
-const int fencer1_c = A2;           // C Line for Fencer 1
+const int FENCER1_A = A0;           // A Line for Fencer 1
+const int FENCER1_B = A1;           // B Line for Fencer 1
+const int FENCER1_C = A2;           // C Line for Fencer 1
 
-const int fencer2_a = A3;           // A Line for Fencer 2
-const int fencer2_b = A4;           // B Line for Fencer 2
-const int fencer2_c = A5;           // C Line for Fencer 2
+const int FENCER2_A = A3;           // A Line for Fencer 2
+const int FENCER2_B = A4;           // B Line for Fencer 2
+const int FENCER2_C = A5;           // C Line for Fencer 2
 
-const int fencer1_light = 9;       // LED when fencer1 Hits
-const int fencer2_light = 10;      // LED when fencer2 Hits
-const int buzzer = 11;             // Buzzer Pin
+const int FENCER1_LIGHT = 9;       // LED when fencer1 Hits
+const int FENCER2_LIGHT = 10;      // LED when fencer2 Hits
 
-const int onboard_led = 13;        // Onboard LED for testing
+const int BUZZER = 11;             // Buzzer Pin
+
+const int ONBOARD_LED = 13;        // Onboard LED for testing
+
+#endif
+

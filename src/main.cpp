@@ -7,37 +7,51 @@
  created 2015
  by B.J. Self
 
+*/
 
- */
-
-// Constants won't change.
 #include "Arduino.h"
 #include "lines.h"
 #include "pin_setup.h"
+#include "configurations.h"
+#include "scoring_machine.h"
 
-const boolean DEBUG = true;               // Set to true to use the serial debugger
+ScoringMachine scoringMachine;
 
-void signal_setup_complete() {
-   for (int i=0; i < 5; i++) {
-      digitalWrite(onboard_led, HIGH);
+void signal_setup_complete() 
+{
+   for (int i=0; i < 5; i++) 
+   {
+      digitalWrite(ONBOARD_LED, HIGH);
       delay(250);
-      digitalWrite(onboard_led, LOW);
+      digitalWrite(ONBOARD_LED, LOW);
       delay(250);
    }
 
-   digitalWrite(buzzer, HIGH);
+   digitalWrite(BUZZER, HIGH);
    delay(250);
-   digitalWrite(buzzer, LOW);
+   digitalWrite(BUZZER, LOW);
 }
 
-void setup() {
-   // Set up debugging
-   if (DEBUG) {
+void setup_debugging()
+{
+   if (DEBUG) 
+   {
       Serial.begin(9600);
       Serial.println("Debugging Started...");
    }
+}
+
+void setup() 
+{
+   setup_debugging();
 
    setup_pins();
 
    signal_setup_complete();
 }
+
+void loop() 
+{
+   scoringMachine.cycle();
+}
+
